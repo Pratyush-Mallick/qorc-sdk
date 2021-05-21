@@ -251,12 +251,12 @@ S3x_Policy_Node dfs_node[]  = {
 /* 0th Policy is only for lpm not for run mode */
     [0] = { // Sleep
         .clk_domain = {CLK_C01, CLK_C09, CLK_C10, CLK_C08X4},
-        .rate = {F_256KHZ, F_256KHZ, F_48MHZ, F_12MHZ},
+        .rate = {F_256KHZ, F_256KHZ , F_36MHZ , F_256KHZ},
         .step_width =  800,/* msec */
         .cpuload_downthreshold = 0,
         .cpuload_upthreshold = 98,
         .policySleep = 0xFF,                   // Sleep policy: this is the sleep state, do nothing
-        .minHSOSC = F_48MHZ,
+        .minHSOSC = F_256KHZ,
     },
 
     [1] = { // Minimum performance

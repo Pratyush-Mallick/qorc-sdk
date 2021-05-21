@@ -128,7 +128,7 @@ extern int FPGA_FFE_LOADED;
 //#define FFE_DRIVERS	0 // 1
 //
 ///* do or do not perform dynamic frequency scaling */
-#define CONST_FREQ (1)
+#define CONST_FREQ (0)
 //
 ///* enable the LTC1859 driver */
 //#define LTC1859_DRIVER  0 // 1
@@ -137,7 +137,7 @@ extern int FPGA_FFE_LOADED;
 #define AUDIO_DRIVER    1    // Set 1 to enable audio sampling
 //
 ///* enable LPSD mode of AUDIO IP*/
-//#define ENABLE_LPSD    0 //Set to 1 enable, 0 to disable LPSD
+#define ENABLE_LPSD    1 //Set to 1 enable, 0 to disable LPSD
 //
 ///* if 0 load from SPI, if 1 load FFE/FPGA from SD card */
 //#define LOAD_FROM_SD    1

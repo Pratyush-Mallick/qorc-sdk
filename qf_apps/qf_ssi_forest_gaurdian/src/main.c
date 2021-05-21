@@ -135,6 +135,8 @@ int main(void)
 	
 	dbg_str( "\n\nHello world!!\n\n");	// <<<<<<<<<<<<<<<<<<<<<  Change me!
     HAL_Delay_Init();
+	// enable low power state of RAM
+	uart_set_lpm_state(UART_ID_SSI,1);
 #if (PDM_PAD_28_29 == 1)
     IO_MUX->PDM_DATA_SELE = 0x02;   // 1 for pad10, 2 for pad28
 #endif
