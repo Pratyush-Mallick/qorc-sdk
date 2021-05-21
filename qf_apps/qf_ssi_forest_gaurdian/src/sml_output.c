@@ -27,8 +27,10 @@
 #pragma GCC diagnostic ignored "-Wunused-function"
 #endif
 
+/* Max class array */
+uint8_t max_class[3] = {0,0,0};
 
-static char serial_out_buf[SERIAL_OUT_CHARS_MAX];
+/* static char serial_out_buf[SERIAL_OUT_CHARS_MAX];
 
 static void sml_output_led(uint16_t model, uint16_t classification)
 {
@@ -38,12 +40,12 @@ static void sml_output_led(uint16_t model, uint16_t classification)
 #define SENSOR_SSSS_RESULT_BUFLEN    (512)
 uint8_t sensor_ssss_ai_fv_arr[MAX_VECTOR_SIZE];
 uint8_t sensor_ssss_ai_fv_len;
-char    sensor_ssss_ai_result_buf[SENSOR_SSSS_RESULT_BUFLEN];
+char    sensor_ssss_ai_result_buf[SENSOR_SSSS_RESULT_BUFLEN]; */
 
 static void sml_output_serial(uint16_t model, uint16_t classification)
 {
     int count;
-    int wbytes = 0;
+    /* int wbytes = 0;
     int buflen = sizeof(sensor_ssss_ai_result_buf)-1;
 	int ret;
     kb_get_feature_vector(model, sensor_ssss_ai_fv_arr, &sensor_ssss_ai_fv_len);
@@ -60,7 +62,16 @@ static void sml_output_serial(uint16_t model, uint16_t classification)
 	count = snprintf(&sensor_ssss_ai_result_buf[wbytes], buflen, "%d]}\n", sensor_ssss_ai_fv_arr[sensor_ssss_ai_fv_len-1]);
     wbytes += count;
     buflen -= count;
-    uart_tx_raw_buf(UART_ID_SSI, sensor_ssss_ai_result_buf, wbytes);
+    uart_tx_raw_buf(UART_ID_SSI, sensor_ssss_ai_result_buf, wbytes); */
+	
+	switch(classification){
+		case 1: max_class[0]++;
+			break;
+		case 2: max_class[1]++;
+			break;
+		case 3: max_class[2]++;
+			break;
+	}
 }
 
 static intptr_t last_output;

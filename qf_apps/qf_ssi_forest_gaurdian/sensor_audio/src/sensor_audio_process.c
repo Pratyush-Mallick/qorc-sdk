@@ -25,7 +25,8 @@
 #include "ssi_comms.h"
 #include "sml_recognition_run.h"
 
-/** */
+/** Task to be attached*/
+TaskHandle_t   xTobeParsed;
 
 #if (SSI_SENSOR_SELECT_AUDIO == 1)
 /* BEGIN JSON descriptor for the sensor configuration */
@@ -160,7 +161,7 @@ datablk_processor_params_t audio_datablk_processor_params[] = {
       audio_datablk_pe_descr,
       256,
       "AUDIO_DBP_THREAD",
-      NULL
+      &xTobeParsed  
     }
 };
 

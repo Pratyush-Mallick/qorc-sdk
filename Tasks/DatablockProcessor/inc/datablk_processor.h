@@ -144,7 +144,7 @@ typedef struct st_datablk_processor_params
   datablk_pe_descriptor_t  *p_descr;          ///< array of thread PE configurations
   int                      stack_depth;      ///< depth of stack needed for this thread
   char                    *dbp_task_name;    ///< datablock processor task name string
-  xTaskHandle              datablk_pe_handle; ///< Task handle for use with task control 
+  xTaskHandle             *datablk_pe_handle; ///< Task handle for use with task control 
                            ///< functions such as vTaskResume
 } datablk_processor_params_t ;
 

@@ -186,7 +186,7 @@ int datablk_processor_task_setup(datablk_processor_params_t *p_dbp_params)
                   p_dbp_params->stack_depth,  
                   p_dbp_params,
                   p_dbp_params->dbp_task_priority, 
-                  &p_dbp_params->datablk_pe_handle
+                  p_dbp_params->datablk_pe_handle
                 );
     
     configASSERT( p_dbp_params->datablk_pe_handle );
