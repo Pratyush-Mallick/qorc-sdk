@@ -50,7 +50,7 @@
 
 // Options for debug output -- use to set DEBUG_UART below
 // #define UART_ID_DISABLED     0   // /dev/null */
-// #define UART_ID_HW           1   // the hard UART on the S3
+ #define UART_ID_HW           1   // the hard UART on the S3
 // #define UART_ID_SEMIHOST     2   // Write debug data to semihost
 // #define UART_ID_FPGA         3   // second uart if part of FPGA
 // #define UART_ID_BUFFER       4   // Write data to buffer
@@ -75,8 +75,8 @@
 #define SENSOR_COMMS_KNOWN_PATTERN (0) // 1 => Send a known sawtooth pattern for live-streaming
 
 /* Settings for selecting either Audio or an I2C sensor, Enable only one of these mode */
-#define SSI_SENSOR_SELECT_AUDIO    (0) // 1 => Select Audio data for live-streaming or recognition modes
-#define SSI_SENSOR_SELECT_SSSS     (1) // 1 => Select SSSS sensor data for live-streaming of recognition modes
+#define SSI_SENSOR_SELECT_AUDIO    (1) // 1 => Select Audio data for live-streaming or recognition modes
+#define SSI_SENSOR_SELECT_SSSS     (0) // 1 => Select SSSS sensor data for live-streaming of recognition modes
 
 #if (SSI_SENSOR_SELECT_AUDIO == 1) && (SSI_SENSOR_SELECT_SSSS == 1)
 #error "Enable only one of the sensors SSI_SENSOR_SELECT_AUDIO or SSI_SENSOR_SELECT_SSSS"
